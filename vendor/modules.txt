@@ -235,8 +235,8 @@ github.com/mitchellh/go-testing-interface
 # github.com/mitchellh/go-wordwrap v1.0.0
 ## explicit
 github.com/mitchellh/go-wordwrap
-# github.com/mitchellh/mapstructure v1.1.2
-## explicit
+# github.com/mitchellh/mapstructure v1.5.0
+## explicit; go 1.14
 github.com/mitchellh/mapstructure
 # github.com/mitchellh/reflectwalk v1.0.1
 ## explicit
@@ -244,7 +244,7 @@ github.com/mitchellh/reflectwalk
 # github.com/oklog/run v1.0.0
 ## explicit
 github.com/oklog/run
-# github.com/paloaltonetworks/prisma-cloud-go v0.5.3
+# github.com/paloaltonetworks/prisma-cloud-go v0.5.3 => /Users/kpande/go/src/github.com/paloaltonetworks/prisma-cloud-go
 ## explicit; go 1.13
 github.com/paloaltonetworks/prisma-cloud-go
 github.com/paloaltonetworks/prisma-cloud-go/alert
@@ -504,3 +504,4 @@ google.golang.org/protobuf/types/known/durationpb
 google.golang.org/protobuf/types/known/emptypb
 google.golang.org/protobuf/types/known/fieldmaskpb
 google.golang.org/protobuf/types/known/timestamppb
+# github.com/paloaltonetworks/prisma-cloud-go => /Users/kpande/go/src/github.com/paloaltonetworks/prisma-cloud-go

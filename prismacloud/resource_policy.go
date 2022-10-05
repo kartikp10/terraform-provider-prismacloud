@@ -470,6 +470,12 @@ func parsePolicy(d *schema.ResourceData, id string) policy.Policy {
 		},
 	}
 
+	// Required for build-only policies. As Rule.Criteria is of type interface{}, it isn't
+	// omitted from the request body unless set to nil explicitely.
+	if ans.Rule.Criteria == "" {
+		ans.Rule.Criteria = nil
+	}
+
 	dataCriteria := rspec["data_criteria"].([]interface{})
 	if len(dataCriteria) > 0 {
 		if data := dataCriteria[0].(map[string]interface{}); len(data) > 0 {
@@ -601,10 +607,10 @@ func savePolicy(d *schema.ResourceData, obj policy.Policy) {
 	cld := make([]interface{}, 0, len(obj.Rule.Children))
 	for _, chi := range obj.Rule.Children {
 		cld = append(cld, map[string]interface{}{
-			"criteria":       chi.Criteria,
+			//"criteria":       chi.Criteria,
 			"type":           chi.Type,
 			"recommendation": chi.Recommendation,
-            "metadata": map[string]string{"code": chi.Metadata.Code},
+			"metadata":       map[string]string{"code": chi.Metadata.Code},
 		})
 	}
 	rv["children"] = cld
